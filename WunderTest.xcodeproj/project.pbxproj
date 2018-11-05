@@ -7,13 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FB8B46241DC69FC34352EAB /* Pods_WunderTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0B31B7BAF5CC508673551A /* Pods_WunderTestUITests.framework */; };
 		69B1007021908EF90096255E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B1006F21908EF90096255E /* AppDelegate.swift */; };
-		69B1007221908EF90096255E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B1007121908EF90096255E /* ViewController.swift */; };
 		69B1007521908EF90096255E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B1007321908EF90096255E /* Main.storyboard */; };
 		69B1007721908EFA0096255E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B1007621908EFA0096255E /* Assets.xcassets */; };
 		69B1007A21908EFA0096255E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B1007821908EFA0096255E /* LaunchScreen.storyboard */; };
 		69B1008521908EFA0096255E /* WunderTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B1008421908EFA0096255E /* WunderTestTests.swift */; };
 		69B1009021908EFA0096255E /* WunderTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B1008F21908EFA0096255E /* WunderTestUITests.swift */; };
+		69B100A6219094EE0096255E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100A5219094EE0096255E /* Constants.swift */; };
+		69B100AD2190AF790096255E /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100A82190AF790096255E /* BaseWireframe.swift */; };
+		69B100AE2190AF790096255E /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100A92190AF790096255E /* UIStoryboardExtension.swift */; };
+		69B100AF2190AF790096255E /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100AA2190AF790096255E /* PresenterInterface.swift */; };
+		69B100B02190AF790096255E /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100AB2190AF790096255E /* ViewInterface.swift */; };
+		69B100B12190AF790096255E /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100AC2190AF790096255E /* InteractorInterface.swift */; };
+		69B100B62190AFDE0096255E /* Error+Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100B52190AFDE0096255E /* Error+Message.swift */; };
+		69B100B92190B0010096255E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100B82190B0010096255E /* APIError.swift */; };
+		69B100BB2190B02C0096255E /* PartialURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100BA2190B02C0096255E /* PartialURL.swift */; };
+		69B100BE2190B10C0096255E /* PlacemarkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100BD2190B10C0096255E /* PlacemarkResponse.swift */; };
+		69B100C22190B9D50096255E /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100C12190B9D50096255E /* Initializer.swift */; };
+		69B100C42190B9DF0096255E /* SVProgressHudInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100C32190B9DF0096255E /* SVProgressHudInitializer.swift */; };
+		69B100C62190B9EB0096255E /* AlamofireInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100C52190B9EB0096255E /* AlamofireInitializer.swift */; };
+		69B100CE2190BA840096255E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B100C82190BA840096255E /* Main.storyboard */; };
+		69B100CF2190BA840096255E /* MainInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100C92190BA840096255E /* MainInterfaces.swift */; };
+		69B100D02190BA840096255E /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100CA2190BA840096255E /* MainPresenter.swift */; };
+		69B100D12190BA840096255E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100CB2190BA840096255E /* MainViewController.swift */; };
+		69B100D22190BA840096255E /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100CC2190BA840096255E /* MainInteractor.swift */; };
+		69B100D32190BA840096255E /* MainWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100CD2190BA840096255E /* MainWireframe.swift */; };
+		69B100D62190BB5E0096255E /* WunderNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100D52190BB5E0096255E /* WunderNavigationController.swift */; };
+		69B100DA2190DE730096255E /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100D92190DE730096255E /* Placemark.swift */; };
+		69B100DD2190DFDD0096255E /* WunderCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100DC2190DFDD0096255E /* WunderCoreDataStore.swift */; };
+		69B100E02190E0410096255E /* PlacemarkPersistenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100DF2190E0410096255E /* PlacemarkPersistenceProtocol.swift */; };
+		69B100E52190E0DB0096255E /* WunderDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B100E32190E0DB0096255E /* WunderDataModel.xcdatamodeld */; };
+		69B100E92190E1B90096255E /* ManagedPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B100E82190E1B90096255E /* ManagedPlacemark.swift */; };
+		A210043A29DE3B6278B6181B /* Pods_WunderTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F20B4CD31717E069A25B87C /* Pods_WunderTest.framework */; };
+		D0CF890E545C483EAD1B259D /* Pods_WunderTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6DE63104462459E3520846 /* Pods_WunderTestTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +61,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084DF672DCFAB3E7663D6E68 /* Pods-WunderTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WunderTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WunderTest/Pods-WunderTest.debug.xcconfig"; sourceTree = "<group>"; };
+		0C6DE63104462459E3520846 /* Pods_WunderTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WunderTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F20B4CD31717E069A25B87C /* Pods_WunderTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WunderTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B2D23E01440C904CF863D79 /* Pods-WunderTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WunderTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WunderTestTests/Pods-WunderTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69B1006C21908EF90096255E /* WunderTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WunderTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B1006F21908EF90096255E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69B1007121908EF90096255E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69B1007421908EF90096255E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69B1007621908EFA0096255E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69B1007921908EFA0096255E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +77,36 @@
 		69B1008B21908EFA0096255E /* WunderTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WunderTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B1008F21908EFA0096255E /* WunderTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WunderTestUITests.swift; sourceTree = "<group>"; };
 		69B1009121908EFA0096255E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69B100A5219094EE0096255E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		69B100A82190AF790096255E /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		69B100A92190AF790096255E /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		69B100AA2190AF790096255E /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
+		69B100AB2190AF790096255E /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
+		69B100AC2190AF790096255E /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
+		69B100B52190AFDE0096255E /* Error+Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Message.swift"; sourceTree = "<group>"; };
+		69B100B82190B0010096255E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		69B100BA2190B02C0096255E /* PartialURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialURL.swift; sourceTree = "<group>"; };
+		69B100BD2190B10C0096255E /* PlacemarkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkResponse.swift; sourceTree = "<group>"; };
+		69B100C12190B9D50096255E /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
+		69B100C32190B9DF0096255E /* SVProgressHudInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVProgressHudInitializer.swift; sourceTree = "<group>"; };
+		69B100C52190B9EB0096255E /* AlamofireInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireInitializer.swift; sourceTree = "<group>"; };
+		69B100C82190BA840096255E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		69B100C92190BA840096255E /* MainInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterfaces.swift; sourceTree = "<group>"; };
+		69B100CA2190BA840096255E /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		69B100CB2190BA840096255E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		69B100CC2190BA840096255E /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		69B100CD2190BA840096255E /* MainWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWireframe.swift; sourceTree = "<group>"; };
+		69B100D52190BB5E0096255E /* WunderNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WunderNavigationController.swift; sourceTree = "<group>"; };
+		69B100D92190DE730096255E /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
+		69B100DC2190DFDD0096255E /* WunderCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WunderCoreDataStore.swift; sourceTree = "<group>"; };
+		69B100DF2190E0410096255E /* PlacemarkPersistenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkPersistenceProtocol.swift; sourceTree = "<group>"; };
+		69B100E42190E0DB0096255E /* WunderDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WunderDataModel.xcdatamodel; sourceTree = "<group>"; };
+		69B100E82190E1B90096255E /* ManagedPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedPlacemark.swift; sourceTree = "<group>"; };
+		775383708E45B4ACDEBD3C83 /* Pods-WunderTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WunderTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WunderTestUITests/Pods-WunderTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9238831F8A1F14D7E18D5A07 /* Pods-WunderTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WunderTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WunderTestUITests/Pods-WunderTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE0B31B7BAF5CC508673551A /* Pods_WunderTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WunderTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE14B82E600020A75E92A05D /* Pods-WunderTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WunderTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WunderTest/Pods-WunderTest.release.xcconfig"; sourceTree = "<group>"; };
+		ECCA2255B2C6A21485457A4F /* Pods-WunderTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WunderTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WunderTestTests/Pods-WunderTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A210043A29DE3B6278B6181B /* Pods_WunderTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CF890E545C483EAD1B259D /* Pods_WunderTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +130,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB8B46241DC69FC34352EAB /* Pods_WunderTestUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		573CFE2FF03D433B84D41628 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F20B4CD31717E069A25B87C /* Pods_WunderTest.framework */,
+				0C6DE63104462459E3520846 /* Pods_WunderTestTests.framework */,
+				CE0B31B7BAF5CC508673551A /* Pods_WunderTestUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		69B1006321908EF90096255E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +154,8 @@
 				69B1008321908EFA0096255E /* WunderTestTests */,
 				69B1008E21908EFA0096255E /* WunderTestUITests */,
 				69B1006D21908EF90096255E /* Products */,
+				FCB9920C105F7EFE3ECA9F0C /* Pods */,
+				573CFE2FF03D433B84D41628 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +172,11 @@
 		69B1006E21908EF90096255E /* WunderTest */ = {
 			isa = PBXGroup;
 			children = (
-				69B1006F21908EF90096255E /* AppDelegate.swift */,
-				69B1007121908EF90096255E /* ViewController.swift */,
-				69B1007321908EF90096255E /* Main.storyboard */,
-				69B1007621908EFA0096255E /* Assets.xcassets */,
-				69B1007821908EFA0096255E /* LaunchScreen.storyboard */,
-				69B1007B21908EFA0096255E /* Info.plist */,
+				69B1009D21908F050096255E /* App */,
+				69B100A021908F410096255E /* Common */,
+				69B100A221908F840096255E /* Modules */,
+				69B100A121908F5E0096255E /* Resources */,
+				69B1009E21908F210096255E /* SupportingFiles */,
 			);
 			path = WunderTest;
 			sourceTree = "<group>";
@@ -125,6 +199,212 @@
 			path = WunderTestUITests;
 			sourceTree = "<group>";
 		};
+		69B1009D21908F050096255E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				69B100C02190B9BC0096255E /* Initializers */,
+				69B1006F21908EF90096255E /* AppDelegate.swift */,
+				69B100A5219094EE0096255E /* Constants.swift */,
+				69B100D52190BB5E0096255E /* WunderNavigationController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		69B1009E21908F210096255E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				69B1007321908EF90096255E /* Main.storyboard */,
+				69B1007821908EFA0096255E /* LaunchScreen.storyboard */,
+				69B1007B21908EFA0096255E /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		69B100A021908F410096255E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				69B100B72190AFE20096255E /* API */,
+				69B100DB2190DFC30096255E /* Data */,
+				69B100B22190AFA80096255E /* Extensions */,
+				69B100D72190DDEC0096255E /* Messages */,
+				69B100BF2190B30D0096255E /* Services */,
+				69B100A72190AF790096255E /* VIPER */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		69B100A121908F5E0096255E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				69B1007621908EFA0096255E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		69B100A221908F840096255E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				69B100C72190BA700096255E /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		69B100A72190AF790096255E /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				69B100A82190AF790096255E /* BaseWireframe.swift */,
+				69B100A92190AF790096255E /* UIStoryboardExtension.swift */,
+				69B100AA2190AF790096255E /* PresenterInterface.swift */,
+				69B100AB2190AF790096255E /* ViewInterface.swift */,
+				69B100AC2190AF790096255E /* InteractorInterface.swift */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		69B100B22190AFA80096255E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				69B100B52190AFDE0096255E /* Error+Message.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		69B100B72190AFE20096255E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				69B100B82190B0010096255E /* APIError.swift */,
+				69B100BA2190B02C0096255E /* PartialURL.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		69B100BC2190B07B0096255E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				69B100E72190E1830096255E /* Managed */,
+				69B100E62190E17D0096255E /* Entities */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		69B100BF2190B30D0096255E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		69B100C02190B9BC0096255E /* Initializers */ = {
+			isa = PBXGroup;
+			children = (
+				69B100C52190B9EB0096255E /* AlamofireInitializer.swift */,
+				69B100C12190B9D50096255E /* Initializer.swift */,
+				69B100C32190B9DF0096255E /* SVProgressHudInitializer.swift */,
+			);
+			path = Initializers;
+			sourceTree = "<group>";
+		};
+		69B100C72190BA700096255E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				69B100D42190BA960096255E /* Views */,
+				69B100C92190BA840096255E /* MainInterfaces.swift */,
+				69B100CA2190BA840096255E /* MainPresenter.swift */,
+				69B100CB2190BA840096255E /* MainViewController.swift */,
+				69B100CC2190BA840096255E /* MainInteractor.swift */,
+				69B100CD2190BA840096255E /* MainWireframe.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		69B100D42190BA960096255E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69B100C82190BA840096255E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		69B100D72190DDEC0096255E /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				69B100D82190DDF50096255E /* Responses */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		69B100D82190DDF50096255E /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				69B100BD2190B10C0096255E /* PlacemarkResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		69B100DB2190DFC30096255E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				69B100E22190E0C80096255E /* DataModel */,
+				69B100E12190E0B90096255E /* Infrastructure */,
+				69B100BC2190B07B0096255E /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		69B100DE2190E0140096255E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				69B100DF2190E0410096255E /* PlacemarkPersistenceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		69B100E12190E0B90096255E /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				69B100DE2190E0140096255E /* Protocols */,
+				69B100DC2190DFDD0096255E /* WunderCoreDataStore.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		69B100E22190E0C80096255E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				69B100E32190E0DB0096255E /* WunderDataModel.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		69B100E62190E17D0096255E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				69B100D92190DE730096255E /* Placemark.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		69B100E72190E1830096255E /* Managed */ = {
+			isa = PBXGroup;
+			children = (
+				69B100E82190E1B90096255E /* ManagedPlacemark.swift */,
+			);
+			path = Managed;
+			sourceTree = "<group>";
+		};
+		FCB9920C105F7EFE3ECA9F0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				084DF672DCFAB3E7663D6E68 /* Pods-WunderTest.debug.xcconfig */,
+				DE14B82E600020A75E92A05D /* Pods-WunderTest.release.xcconfig */,
+				4B2D23E01440C904CF863D79 /* Pods-WunderTestTests.debug.xcconfig */,
+				ECCA2255B2C6A21485457A4F /* Pods-WunderTestTests.release.xcconfig */,
+				9238831F8A1F14D7E18D5A07 /* Pods-WunderTestUITests.debug.xcconfig */,
+				775383708E45B4ACDEBD3C83 /* Pods-WunderTestUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +412,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69B1009421908EFA0096255E /* Build configuration list for PBXNativeTarget "WunderTest" */;
 			buildPhases = (
+				37F68143F2533D2FAF68A33D /* [CP] Check Pods Manifest.lock */,
 				69B1006821908EF90096255E /* Sources */,
 				69B1006921908EF90096255E /* Frameworks */,
 				69B1006A21908EF90096255E /* Resources */,
+				9549FC74103385E17C7A9ABB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,9 +431,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69B1009721908EFA0096255E /* Build configuration list for PBXNativeTarget "WunderTestTests" */;
 			buildPhases = (
+				E3869799713DF3DBF453E2D3 /* [CP] Check Pods Manifest.lock */,
 				69B1007C21908EFA0096255E /* Sources */,
 				69B1007D21908EFA0096255E /* Frameworks */,
 				69B1007E21908EFA0096255E /* Resources */,
+				A58E1697079E9C0303C6525D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,9 +451,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69B1009A21908EFA0096255E /* Build configuration list for PBXNativeTarget "WunderTestUITests" */;
 			buildPhases = (
+				A1F71116EF39AA5A8BF61B80 /* [CP] Check Pods Manifest.lock */,
 				69B1008721908EFA0096255E /* Sources */,
 				69B1008821908EFA0096255E /* Frameworks */,
 				69B1008921908EFA0096255E /* Resources */,
+				6611F15D429FE0A9C557C572 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +518,7 @@
 				69B1007A21908EFA0096255E /* LaunchScreen.storyboard in Resources */,
 				69B1007721908EFA0096255E /* Assets.xcassets in Resources */,
 				69B1007521908EF90096255E /* Main.storyboard in Resources */,
+				69B100CE2190BA840096255E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +538,183 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37F68143F2533D2FAF68A33D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WunderTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6611F15D429FE0A9C557C572 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WunderTestUITests/Pods-WunderTestUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WunderTestUITests/Pods-WunderTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9549FC74103385E17C7A9ABB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WunderTest/Pods-WunderTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WunderTest/Pods-WunderTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1F71116EF39AA5A8BF61B80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WunderTestUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A58E1697079E9C0303C6525D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WunderTestTests/Pods-WunderTestTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WunderTestTests/Pods-WunderTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3869799713DF3DBF453E2D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WunderTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		69B1006821908EF90096255E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69B1007221908EF90096255E /* ViewController.swift in Sources */,
+				69B100B62190AFDE0096255E /* Error+Message.swift in Sources */,
+				69B100DD2190DFDD0096255E /* WunderCoreDataStore.swift in Sources */,
+				69B100AD2190AF790096255E /* BaseWireframe.swift in Sources */,
 				69B1007021908EF90096255E /* AppDelegate.swift in Sources */,
+				69B100B12190AF790096255E /* InteractorInterface.swift in Sources */,
+				69B100AE2190AF790096255E /* UIStoryboardExtension.swift in Sources */,
+				69B100D22190BA840096255E /* MainInteractor.swift in Sources */,
+				69B100C62190B9EB0096255E /* AlamofireInitializer.swift in Sources */,
+				69B100A6219094EE0096255E /* Constants.swift in Sources */,
+				69B100E92190E1B90096255E /* ManagedPlacemark.swift in Sources */,
+				69B100D12190BA840096255E /* MainViewController.swift in Sources */,
+				69B100B02190AF790096255E /* ViewInterface.swift in Sources */,
+				69B100AF2190AF790096255E /* PresenterInterface.swift in Sources */,
+				69B100C22190B9D50096255E /* Initializer.swift in Sources */,
+				69B100CF2190BA840096255E /* MainInterfaces.swift in Sources */,
+				69B100D02190BA840096255E /* MainPresenter.swift in Sources */,
+				69B100E02190E0410096255E /* PlacemarkPersistenceProtocol.swift in Sources */,
+				69B100D32190BA840096255E /* MainWireframe.swift in Sources */,
+				69B100C42190B9DF0096255E /* SVProgressHudInitializer.swift in Sources */,
+				69B100DA2190DE730096255E /* Placemark.swift in Sources */,
+				69B100D62190BB5E0096255E /* WunderNavigationController.swift in Sources */,
+				69B100E52190E0DB0096255E /* WunderDataModel.xcdatamodeld in Sources */,
+				69B100BE2190B10C0096255E /* PlacemarkResponse.swift in Sources */,
+				69B100B92190B0010096255E /* APIError.swift in Sources */,
+				69B100BB2190B02C0096255E /* PartialURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,11 +887,12 @@
 		};
 		69B1009521908EFA0096255E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 084DF672DCFAB3E7663D6E68 /* Pods-WunderTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
-				INFOPLIST_FILE = WunderTest/Info.plist;
+				INFOPLIST_FILE = WunderTest/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,11 +906,12 @@
 		};
 		69B1009621908EFA0096255E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE14B82E600020A75E92A05D /* Pods-WunderTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
-				INFOPLIST_FILE = WunderTest/Info.plist;
+				INFOPLIST_FILE = WunderTest/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,8 +925,8 @@
 		};
 		69B1009821908EFA0096255E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B2D23E01440C904CF863D79 /* Pods-WunderTestTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
@@ -487,8 +946,8 @@
 		};
 		69B1009921908EFA0096255E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECCA2255B2C6A21485457A4F /* Pods-WunderTestTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
@@ -508,8 +967,8 @@
 		};
 		69B1009B21908EFA0096255E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9238831F8A1F14D7E18D5A07 /* Pods-WunderTestUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
 				INFOPLIST_FILE = WunderTestUITests/Info.plist;
@@ -528,8 +987,8 @@
 		};
 		69B1009C21908EFA0096255E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 775383708E45B4ACDEBD3C83 /* Pods-WunderTestUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y8HF4E9A7;
 				INFOPLIST_FILE = WunderTestUITests/Info.plist;
@@ -586,6 +1045,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		69B100E32190E0DB0096255E /* WunderDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				69B100E42190E0DB0096255E /* WunderDataModel.xcdatamodel */,
+			);
+			currentVersion = 69B100E42190E0DB0096255E /* WunderDataModel.xcdatamodel */;
+			path = WunderDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 69B1006421908EF90096255E /* Project object */;
 }

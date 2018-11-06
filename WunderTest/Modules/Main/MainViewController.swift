@@ -12,6 +12,11 @@ import UIKit
 
 final class MainViewController: UIViewController {
   
+  // MARK: - IBOutlets -
+  
+  @IBOutlet weak var segmentControl : UISegmentedControl!
+  @IBOutlet weak var containerView : UIView!
+  
   // MARK: - Public properties -
   
   var presenter: MainPresenterInterface!
@@ -20,9 +25,104 @@ final class MainViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    _configure()
     presenter.viewDidLoad()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+  }
+  
+  // MARK: - Configuration -
+  
+  private func _configure() {
+    _setupView()
+  }
+  
+  private func _setupView() {
+    updateView()
+  }
+  
+  // MARK: - Variables -
+  
+  private lazy var placemarksListViewController: PlacemarksListViewController = {
+    // Load Storyboard
+    let _storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    
+    // Instantiate View Controller
+    var viewController = _storyboard.instantiateViewController(ofType: PlacemarksListViewController.self)
+    
+    // Add View Controller as Child View Controller
+    self.add(asChildViewController: viewController)
+    
+    return viewController
+  }()
+  
+  private lazy var placemarksMapViewController: PlacemarksMapViewController = {
+    // Load Storyboard
+    let _storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    
+    // Instantiate View Controller
+    var viewController = _storyboard.instantiateViewController(ofType: PlacemarksMapViewController.self)
+    
+    // Add View Controller as Child View Controller
+    self.add(asChildViewController: viewController)
+    
+    return viewController
+  }()
+  
+  // MARK: - Action Methods -
+  
+  static func viewController() -> MainViewController {
+    return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(ofType: MainViewController.self)
+  }
+
+  @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+    updateView()
+  }
+  
+  private func add(asChildViewController viewController: UIViewController) {
+    
+    // Add Child View Controller
+    addChild(viewController)
+    
+    // Add Child View as Subview
+    containerView.addSubview(viewController.view)
+    
+    // Configure Child View
+    viewController.view.frame = containerView.bounds
+    viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    
+    // Notify Child View Controller
+    viewController.didMove(toParent: self)
+  }
+  
+  private func remove(asChildViewController viewController: UIViewController) {
+    // Notify Child View Controller
+    viewController.willMove(toParent: nil)
+    
+    // Remove Child View From Superview
+    viewController.view.removeFromSuperview()
+    
+    // Notify Child View Controller
+    viewController.removeFromParent()
+  }
+  
+  private func updateView() {
+    if segmentControl.selectedSegmentIndex == 0 {
+      title = "Placemarks List"
+      remove(asChildViewController: placemarksMapViewController)
+      add(asChildViewController: placemarksListViewController)
+    } else {
+      title = "Placemarks Map"
+      remove(asChildViewController: placemarksListViewController)
+      add(asChildViewController: placemarksMapViewController)
+    }
+  }
 }
 
 // MARK: - Extensions -

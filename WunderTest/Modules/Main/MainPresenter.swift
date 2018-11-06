@@ -18,6 +18,8 @@ final class MainPresenter {
   private var _interactor: MainInteractorInterface
   private var _wireframe: MainWireframeInterface
   
+  private var _dataStore: PlacemarkPersistenceProtocol!
+  
   // MARK: - Lifecycle -
   
   init(wireframe: MainWireframeInterface, view: MainViewInterface, interactor: MainInteractorInterface) {
@@ -27,6 +29,7 @@ final class MainPresenter {
   }
   
   func viewDidLoad() {
+    _dataStore = WunderCoreDataStore.shared
     getPlacemarks()
   }
 }
@@ -36,9 +39,15 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterInterface {
   func getPlacemarks() {
     _view.showProgressHUD()
-    _interactor.getPlacemarks { [weak self] (placemarks) in
-      self?._view.hideProgressHUD()
-      debugPrint(placemarks)
+    _dataStore.deletePlacemarks { [weak self] _ in
+      self?._interactor.getPlacemarks { (placemarks) in
+        for placemark in placemarks {
+          self?._dataStore.createPlacemark(placemark) { _ in
+            debugPrint("created plaemark: \(placemark)")
+          }
+        }
+        self?._view.hideProgressHUD()
+      }
     }
   }
 }

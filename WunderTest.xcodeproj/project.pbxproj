@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		2FB8B46241DC69FC34352EAB /* Pods_WunderTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0B31B7BAF5CC508673551A /* Pods_WunderTestUITests.framework */; };
 		692A608921911913006F1CFE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A608821911913006F1CFE /* Constants.swift */; };
+		692A60942191E489006F1CFE /* PlacemarksMapInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A608F2191E489006F1CFE /* PlacemarksMapInterfaces.swift */; };
+		692A60952191E489006F1CFE /* PlacemarksMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A60902191E489006F1CFE /* PlacemarksMapPresenter.swift */; };
+		692A60962191E489006F1CFE /* PlacemarksMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A60912191E489006F1CFE /* PlacemarksMapViewController.swift */; };
+		692A60972191E489006F1CFE /* PlacemarksMapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A60922191E489006F1CFE /* PlacemarksMapInteractor.swift */; };
+		692A60982191E489006F1CFE /* PlacemarksMapWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A60932191E489006F1CFE /* PlacemarksMapWireframe.swift */; };
+		692A609E2191E49B006F1CFE /* PlacemarksListInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A60992191E49B006F1CFE /* PlacemarksListInterfaces.swift */; };
+		692A609F2191E49B006F1CFE /* PlacemarksListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A609A2191E49B006F1CFE /* PlacemarksListPresenter.swift */; };
+		692A60A02191E49B006F1CFE /* PlacemarksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A609B2191E49B006F1CFE /* PlacemarksListViewController.swift */; };
+		692A60A12191E49B006F1CFE /* PlacemarksListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A609C2191E49B006F1CFE /* PlacemarksListInteractor.swift */; };
+		692A60A22191E49B006F1CFE /* PlacemarksListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A609D2191E49B006F1CFE /* PlacemarksListWireframe.swift */; };
 		69B1007021908EF90096255E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B1006F21908EF90096255E /* AppDelegate.swift */; };
 		69B1007521908EF90096255E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B1007321908EF90096255E /* Main.storyboard */; };
 		69B1007721908EFA0096255E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B1007621908EFA0096255E /* Assets.xcassets */; };
@@ -69,6 +79,16 @@
 		2F20B4CD31717E069A25B87C /* Pods_WunderTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WunderTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2D23E01440C904CF863D79 /* Pods-WunderTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WunderTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WunderTestTests/Pods-WunderTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		692A608821911913006F1CFE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		692A608F2191E489006F1CFE /* PlacemarksMapInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksMapInterfaces.swift; sourceTree = "<group>"; };
+		692A60902191E489006F1CFE /* PlacemarksMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksMapPresenter.swift; sourceTree = "<group>"; };
+		692A60912191E489006F1CFE /* PlacemarksMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksMapViewController.swift; sourceTree = "<group>"; };
+		692A60922191E489006F1CFE /* PlacemarksMapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksMapInteractor.swift; sourceTree = "<group>"; };
+		692A60932191E489006F1CFE /* PlacemarksMapWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksMapWireframe.swift; sourceTree = "<group>"; };
+		692A60992191E49B006F1CFE /* PlacemarksListInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksListInterfaces.swift; sourceTree = "<group>"; };
+		692A609A2191E49B006F1CFE /* PlacemarksListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksListPresenter.swift; sourceTree = "<group>"; };
+		692A609B2191E49B006F1CFE /* PlacemarksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksListViewController.swift; sourceTree = "<group>"; };
+		692A609C2191E49B006F1CFE /* PlacemarksListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksListInteractor.swift; sourceTree = "<group>"; };
+		692A609D2191E49B006F1CFE /* PlacemarksListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksListWireframe.swift; sourceTree = "<group>"; };
 		69B1006C21908EF90096255E /* WunderTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WunderTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B1006F21908EF90096255E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69B1007421908EF90096255E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +173,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		692A608A2191E2CF006F1CFE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				692A608B2191E2EE006F1CFE /* SegmentedView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		692A608B2191E2EE006F1CFE /* SegmentedView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SegmentedView;
+			sourceTree = "<group>";
+		};
+		692A608C2191E3D4006F1CFE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				69B100C82190BA840096255E /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		692A608D2191E469006F1CFE /* PlacemarksList */ = {
+			isa = PBXGroup;
+			children = (
+				692A60992191E49B006F1CFE /* PlacemarksListInterfaces.swift */,
+				692A609A2191E49B006F1CFE /* PlacemarksListPresenter.swift */,
+				692A609B2191E49B006F1CFE /* PlacemarksListViewController.swift */,
+				692A609C2191E49B006F1CFE /* PlacemarksListInteractor.swift */,
+				692A609D2191E49B006F1CFE /* PlacemarksListWireframe.swift */,
+			);
+			path = PlacemarksList;
+			sourceTree = "<group>";
+		};
+		692A608E2191E471006F1CFE /* PlacemarksMap */ = {
+			isa = PBXGroup;
+			children = (
+				692A608F2191E489006F1CFE /* PlacemarksMapInterfaces.swift */,
+				692A60902191E489006F1CFE /* PlacemarksMapPresenter.swift */,
+				692A60912191E489006F1CFE /* PlacemarksMapViewController.swift */,
+				692A60922191E489006F1CFE /* PlacemarksMapInteractor.swift */,
+				692A60932191E489006F1CFE /* PlacemarksMapWireframe.swift */,
+			);
+			path = PlacemarksMap;
+			sourceTree = "<group>";
+		};
 		69B1006321908EF90096255E = {
 			isa = PBXGroup;
 			children = (
@@ -229,9 +296,11 @@
 		69B100A021908F410096255E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				692A608A2191E2CF006F1CFE /* Components */,
 				69B100DB2190DFC30096255E /* Data */,
 				69B100F72190F2460096255E /* Extensions */,
 				69B100F02190ECD90096255E /* Network */,
+				692A608C2191E3D4006F1CFE /* Storyboards */,
 				69B100A72190AF790096255E /* VIPER */,
 			);
 			path = Common;
@@ -249,6 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				69B100C72190BA700096255E /* Main */,
+				692A608E2191E471006F1CFE /* PlacemarksMap */,
+				692A608D2191E469006F1CFE /* PlacemarksList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -303,7 +374,6 @@
 		69B100C72190BA700096255E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				69B100D42190BA960096255E /* Views */,
 				69B100C92190BA840096255E /* MainInterfaces.swift */,
 				69B100CA2190BA840096255E /* MainPresenter.swift */,
 				69B100CB2190BA840096255E /* MainViewController.swift */,
@@ -311,14 +381,6 @@
 				69B100CD2190BA840096255E /* MainWireframe.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		69B100D42190BA960096255E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				69B100C82190BA840096255E /* Main.storyboard */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		69B100D72190DDEC0096255E /* Messages */ = {
@@ -736,12 +798,16 @@
 				69B100B62190AFDE0096255E /* Error+Message.swift in Sources */,
 				69B100DD2190DFDD0096255E /* WunderCoreDataStore.swift in Sources */,
 				69B100AD2190AF790096255E /* BaseWireframe.swift in Sources */,
+				692A60A12191E49B006F1CFE /* PlacemarksListInteractor.swift in Sources */,
+				692A60A02191E49B006F1CFE /* PlacemarksListViewController.swift in Sources */,
+				692A60A22191E49B006F1CFE /* PlacemarksListWireframe.swift in Sources */,
 				69B1007021908EF90096255E /* AppDelegate.swift in Sources */,
 				69B100EF2190EBE60096255E /* PlacemarkDataService.swift in Sources */,
 				69B100B12190AF790096255E /* InteractorInterface.swift in Sources */,
 				69B100AE2190AF790096255E /* UIStoryboardExtension.swift in Sources */,
 				69B100D22190BA840096255E /* MainInteractor.swift in Sources */,
 				69B100F92190F2560096255E /* AlamofireExtensions.swift in Sources */,
+				692A60982191E489006F1CFE /* PlacemarksMapWireframe.swift in Sources */,
 				69B100C62190B9EB0096255E /* AlamofireInitializer.swift in Sources */,
 				69B100E92190E1B90096255E /* ManagedPlacemark.swift in Sources */,
 				692A608921911913006F1CFE /* Constants.swift in Sources */,
@@ -751,16 +817,22 @@
 				69B100C22190B9D50096255E /* Initializer.swift in Sources */,
 				69B100CF2190BA840096255E /* MainInterfaces.swift in Sources */,
 				69B100D02190BA840096255E /* MainPresenter.swift in Sources */,
+				692A60952191E489006F1CFE /* PlacemarksMapPresenter.swift in Sources */,
 				69B100E02190E0410096255E /* PlacemarkPersistenceProtocol.swift in Sources */,
+				692A60972191E489006F1CFE /* PlacemarksMapInteractor.swift in Sources */,
 				69B100D32190BA840096255E /* MainWireframe.swift in Sources */,
 				69B100EC2190E6970096255E /* PlacemarkDataStore.swift in Sources */,
+				692A60942191E489006F1CFE /* PlacemarksMapInterfaces.swift in Sources */,
 				69B100F62190EED50096255E /* Router.swift in Sources */,
 				69B100C42190B9DF0096255E /* SVProgressHudInitializer.swift in Sources */,
 				69B100DA2190DE730096255E /* Placemark.swift in Sources */,
 				69B100D62190BB5E0096255E /* WunderNavigationController.swift in Sources */,
 				69B100E52190E0DB0096255E /* WunderDataModel.xcdatamodeld in Sources */,
+				692A609F2191E49B006F1CFE /* PlacemarksListPresenter.swift in Sources */,
 				69B100BE2190B10C0096255E /* PlacemarkResponse.swift in Sources */,
 				69B100B92190B0010096255E /* APIError.swift in Sources */,
+				692A609E2191E49B006F1CFE /* PlacemarksListInterfaces.swift in Sources */,
+				692A60962191E489006F1CFE /* PlacemarksMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

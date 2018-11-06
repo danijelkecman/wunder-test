@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DiW-0C-Vzi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="zIc-eW-6fX" customClass="MainViewController" customModule="WunderTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQ6-Nj-gzy">
+                                <rect key="frame" x="0.0" y="48" width="375" height="619"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MvX-NX-O9w">
+                                <rect key="frame" x="0.0" y="20" width="375" height="29"/>
+                                <segments>
+                                    <segment title="Placemarks List"/>
+                                    <segment title="Placemarks Map"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="zIc-eW-6fX" eventType="valueChanged" id="w6k-c9-5hM"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tQ6-Nj-gzy" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" id="8sg-Bq-fMJ"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="MvX-NX-O9w" secondAttribute="trailing" id="R66-l0-ita"/>
+                            <constraint firstItem="tQ6-Nj-gzy" firstAttribute="top" secondItem="MvX-NX-O9w" secondAttribute="bottom" id="RfG-Tg-ogC"/>
+                            <constraint firstItem="MvX-NX-O9w" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" id="kck-Tw-kRb"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="tQ6-Nj-gzy" secondAttribute="trailing" id="lBI-ne-q9n"/>
+                            <constraint firstItem="MvX-NX-O9w" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" id="q00-cc-X16"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="tQ6-Nj-gzy" secondAttribute="bottom" id="z8a-kv-56C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0K0-Ob-JY6"/>
+                    <connections>
+                        <outlet property="containerView" destination="tQ6-Nj-gzy" id="5z2-tF-hK5"/>
+                        <outlet property="segmentControl" destination="MvX-NX-O9w" id="jtf-3r-PSn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244" y="302.6986506746627"/>
+        </scene>
+        <!--Placemarks List View Controller-->
+        <scene sceneID="GFt-X7-Lum">
+            <objects>
+                <viewController storyboardIdentifier="PlacemarksListViewController" id="JAq-Zz-3v7" customClass="PlacemarksListViewController" customModule="WunderTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="31O-GB-T0F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t6c-Bv-Kvv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ctH-p0-g2g" firstAttribute="trailing" secondItem="t6c-Bv-Kvv" secondAttribute="trailing" id="8wL-vd-SFd"/>
+                            <constraint firstItem="t6c-Bv-Kvv" firstAttribute="top" secondItem="ctH-p0-g2g" secondAttribute="top" id="U58-Z3-Tsf"/>
+                            <constraint firstItem="t6c-Bv-Kvv" firstAttribute="leading" secondItem="ctH-p0-g2g" secondAttribute="leading" id="UEj-Oy-rtf"/>
+                            <constraint firstItem="ctH-p0-g2g" firstAttribute="bottom" secondItem="t6c-Bv-Kvv" secondAttribute="bottom" id="WGV-OD-1yI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ctH-p0-g2g"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWB-qF-Kj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2132" y="920"/>
+        </scene>
+        <!--Placemarks Map View Controller-->
+        <scene sceneID="OeM-aT-sXl">
+            <objects>
+                <viewController storyboardIdentifier="PlacemarksMapViewController" id="44c-zg-Ebj" customClass="PlacemarksMapViewController" customModule="WunderTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vgC-1D-uDe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="54h-AK-ftg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="54h-AK-ftg" firstAttribute="leading" secondItem="hLg-Kc-AvQ" secondAttribute="leading" id="0e5-Jg-KsH"/>
+                            <constraint firstItem="54h-AK-ftg" firstAttribute="top" secondItem="hLg-Kc-AvQ" secondAttribute="top" id="2FP-Jw-X3b"/>
+                            <constraint firstItem="hLg-Kc-AvQ" firstAttribute="bottom" secondItem="54h-AK-ftg" secondAttribute="bottom" id="UWP-nb-8nh"/>
+                            <constraint firstItem="hLg-Kc-AvQ" firstAttribute="trailing" secondItem="54h-AK-ftg" secondAttribute="trailing" id="xLV-qj-b0U"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hLg-Kc-AvQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9y-7u-nCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2778" y="922"/>
+        </scene>
+        <!--Wunder Navigation Controller-->
+        <scene sceneID="wV0-zG-9Of">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="DiW-0C-Vzi" customClass="WunderNavigationController" customModule="WunderTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i9z-WG-hjC">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zIc-eW-6fX" kind="relationship" relationship="rootViewController" id="u5l-we-S4D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3T-bv-PYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="302.6986506746627"/>
+        </scene>
+    </scenes>
+</document>

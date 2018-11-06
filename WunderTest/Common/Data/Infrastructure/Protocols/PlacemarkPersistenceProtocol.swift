@@ -15,13 +15,6 @@ protocol PlacemarkPersistenceProtocol {
   func deletePlacemarks(completionHandler: @escaping (_ done: () throws -> Void) -> Void)
 }
 
-extension PlacemarkPersistenceProtocol {
-  func fetchPlacemarks(completionHandler: @escaping (_ user: () throws -> [Placemark]) -> Void) {}
-  func fetchPlacemark(_ placemarkVin: String, completionHandler: @escaping (_ placemark: () throws -> Placemark?) -> Void) {}
-  func createPlacemark(_ placemark: Placemark, completionHandler: @escaping (_ done: () throws -> Void) -> Void) {}
-  func deletePlacemarks(startDate: Double, endDate: Double, completionHandler: @escaping (_ done: () throws -> Void) -> Void) {}
-}
-
 enum WunderStoreError: Equatable, Error {
   case cannotFetch(String)
   case cannotCreate(String)

@@ -11,20 +11,22 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-
-    // MARK: - Public properties -
-
-    var presenter: MainPresenterInterface!
-
-    // MARK: - Lifecycle -
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-	
+  
+  // MARK: - Public properties -
+  
+  var presenter: MainPresenterInterface!
+  
+  // MARK: - Lifecycle -
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    presenter.viewDidLoad()
+  }
+  
 }
 
 // MARK: - Extensions -
 
 extension MainViewController: MainViewInterface {
 }
+

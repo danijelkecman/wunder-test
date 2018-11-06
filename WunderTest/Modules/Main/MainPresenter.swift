@@ -11,23 +11,35 @@
 import UIKit
 
 final class MainPresenter {
-
-    // MARK: - Private properties -
-
-    private unowned var _view: MainViewInterface
-    private var _interactor: MainInteractorInterface
-    private var _wireframe: MainWireframeInterface
-
-    // MARK: - Lifecycle -
-
-    init(wireframe: MainWireframeInterface, view: MainViewInterface, interactor: MainInteractorInterface) {
-        _wireframe = wireframe
-        _view = view
-        _interactor = interactor
-    }
+  
+  // MARK: - Private properties -
+  
+  private unowned var _view: MainViewInterface
+  private var _interactor: MainInteractorInterface
+  private var _wireframe: MainWireframeInterface
+  
+  // MARK: - Lifecycle -
+  
+  init(wireframe: MainWireframeInterface, view: MainViewInterface, interactor: MainInteractorInterface) {
+    _wireframe = wireframe
+    _view = view
+    _interactor = interactor
+  }
+  
+  func viewDidLoad() {
+    getPlacemarks()
+  }
 }
 
 // MARK: - Extensions -
 
 extension MainPresenter: MainPresenterInterface {
+  func getPlacemarks() {
+    _view.showProgressHUD()
+    _interactor.getPlacemarks { [weak self] (placemarks) in
+      self?._view.hideProgressHUD()
+      debugPrint(placemarks)
+    }
+  }
 }
+

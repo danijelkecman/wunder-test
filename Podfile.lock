@@ -20,6 +20,7 @@ PODS:
     - OHHTTPStubs/Default
   - Quick (1.3.2)
   - SVProgressHUD (2.2.5)
+  - SwiftyBeaver (1.6.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - OHHTTPStubs/Swift
   - Quick (~> 1.1)
   - SVProgressHUD (~> 2.1)
+  - SwiftyBeaver
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -38,6 +40,7 @@ SPEC REPOS:
     - OHHTTPStubs
     - Quick
     - SVProgressHUD
+    - SwiftyBeaver
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -46,7 +49,8 @@ SPEC CHECKSUMS:
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyBeaver: ccfcdf85a04d429f1633f668650b0ce8020bda3a
 
-PODFILE CHECKSUM: b52ffaae83a219d56b23641e84b89d46b1c21a81
+PODFILE CHECKSUM: 5f6f995a2d5cb2841ca735adbc60d5d371804a4c
 
 COCOAPODS: 1.5.3

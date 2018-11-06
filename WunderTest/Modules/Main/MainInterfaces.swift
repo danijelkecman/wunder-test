@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import Alamofire
 
 enum MainNavigationOption {
 }
@@ -21,7 +22,9 @@ protocol MainViewInterface: ViewInterface {
 }
 
 protocol MainPresenterInterface: PresenterInterface {
+  func getPlacemarks()
 }
 
 protocol MainInteractorInterface: InteractorInterface {
+  func getPlacemarks(completion: @escaping ([Placemark]) -> Void)
 }

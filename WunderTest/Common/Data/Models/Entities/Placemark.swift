@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Placemark {
+struct Placemarks: Codable {
+  let placemarks: [Placemark]
+}
+
+struct Placemark: Codable {
   let address: String
   let coordinates: [Double]
   let engineType: String

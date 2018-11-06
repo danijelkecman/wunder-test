@@ -4,6 +4,7 @@ def app_pods
   pod 'Alamofire'
   pod 'SVProgressHUD', '~> 2.1'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.1'
+  pod 'SwiftyBeaver'
 end
 
 def testing_pods

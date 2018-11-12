@@ -54,6 +54,7 @@ extension WunderCoreDataStore: PlacemarkPersistenceProtocol {
         managedPlacemark.fuel = placemark.fuel
         managedPlacemark.interior = placemark.interior
         managedPlacemark.name = placemark.name
+        managedPlacemark.vin = placemark.vin
         
         try WunderCoreDataStore.shared.backgroundContext.save()
         completionHandler { return }

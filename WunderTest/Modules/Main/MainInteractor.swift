@@ -21,7 +21,6 @@ extension MainInteractor: MainInteractorInterface {
   func getPlacemarks(completion: @escaping ([Placemark]) -> Void) {
     SessionManager.default.request(Router.getPlacemarks).validate().responseData { response in
       do {
-        response.debugLog()
         let decoder = JSONDecoder()
         guard let data = response.data else {
           completion([])

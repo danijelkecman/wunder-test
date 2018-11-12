@@ -11,23 +11,65 @@
 import UIKit
 
 final class PlacemarksListPresenter {
-
-    // MARK: - Private properties -
-
-    private unowned var _view: PlacemarksListViewInterface
-    private var _interactor: PlacemarksListInteractorInterface
-    private var _wireframe: PlacemarksListWireframeInterface
-
-    // MARK: - Lifecycle -
-
-    init(wireframe: PlacemarksListWireframeInterface, view: PlacemarksListViewInterface, interactor: PlacemarksListInteractorInterface) {
-        _wireframe = wireframe
-        _view = view
-        _interactor = interactor
+  
+  // MARK: - Private properties -
+  
+  private unowned var _view: PlacemarksListViewInterface
+  private var _interactor: PlacemarksListInteractorInterface
+  private var _wireframe: PlacemarksListWireframeInterface
+  
+  private var _placemarks: [PlacemarkCellItem] = [PlacemarkCellItem]()
+  
+  // MARK: - Lifecycle -
+  
+  init(wireframe: PlacemarksListWireframeInterface, view: PlacemarksListViewInterface, interactor: PlacemarksListInteractorInterface) {
+    _wireframe = wireframe
+    _view = view
+    _interactor = interactor
+  }
+  
+  func viewDidLoad() {
+    guard _placemarks.count == 0 else { return }
+    _getPlacemarksFromRepository()
+  }
+  
+  private func _getPlacemarksFromRepository() {
+    _view.showProgressHUD()
+    _interactor.getPlacemarks { [weak self] (placemarks) in
+      for placemark in placemarks {
+        let _placemark = PlacemarkCellItem(address: placemark.address,
+                                           coordinates: placemark.coordinates,
+                                           engineType: placemark.engineType,
+                                           exterior: placemark.exterior,
+                                           fuel: placemark.fuel,
+                                           interior: placemark.interior,
+                                           name: placemark.name,
+                                           vin: placemark.vin)
+        self?._placemarks.append(_placemark)
+      }
+      self?._view.hideProgressHUD()
+      self?._view.refreshPlacemarksTable()
     }
+  }
 }
 
 // MARK: - Extensions -
 
 extension PlacemarksListPresenter: PlacemarksListPresenterInterface {
+  
+  // TableView Placemarks
+  
+  func numberOfPlacemarkSections() -> Int {
+    return 1
+  }
+  
+  func numberOfPlacemarkItems(in section: Int) -> Int {
+    return _placemarks.count
+  }
+  
+  func placemarkItem(at indexPath: IndexPath) -> PlacemarkCellItem {
+    return _placemarks[indexPath.row]
+  }
+  
 }
+

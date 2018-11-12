@@ -26,10 +26,10 @@ final class MainPresenter {
     _wireframe = wireframe
     _view = view
     _interactor = interactor
+    _dataStore = WunderCoreDataStore.shared
   }
   
   func viewDidLoad() {
-    _dataStore = WunderCoreDataStore.shared
     getPlacemarks()
   }
 }
@@ -42,9 +42,7 @@ extension MainPresenter: MainPresenterInterface {
     _dataStore.deletePlacemarks { [weak self] _ in
       self?._interactor.getPlacemarks { (placemarks) in
         for placemark in placemarks {
-          self?._dataStore.createPlacemark(placemark) { _ in
-            debugPrint("created plaemark: \(placemark)")
-          }
+          self?._dataStore.createPlacemark(placemark) { _ in }
         }
         self?._view.hideProgressHUD()
       }

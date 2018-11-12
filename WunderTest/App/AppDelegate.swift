@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import Fabric
+import Crashlytics
 import SwiftyBeaver
 
 let log = SwiftyBeaver.self
@@ -22,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   ]
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    FirebaseApp.configure()
+    Fabric.sharedSDK().debug = true
+    Fabric.with([Crashlytics.self])
+    
     initializers.forEach { $0.performInitialization() }
     
     let initialController = WunderNavigationController()

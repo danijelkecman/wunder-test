@@ -18,10 +18,15 @@ protocol PlacemarksListWireframeInterface: WireframeInterface {
 }
 
 protocol PlacemarksListViewInterface: ViewInterface {
+  func refreshPlacemarksTable()
 }
 
 protocol PlacemarksListPresenterInterface: PresenterInterface {
+  func numberOfPlacemarkSections() -> Int
+  func numberOfPlacemarkItems(in section: Int) -> Int
+  func placemarkItem(at indexPath: IndexPath) -> PlacemarkCellItem
 }
 
 protocol PlacemarksListInteractorInterface: InteractorInterface {
+  func getPlacemarks(completion: @escaping ([Placemark]) -> Void)
 }

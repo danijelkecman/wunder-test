@@ -9,23 +9,83 @@
 //
 
 import UIKit
+import Reusable
 
 final class PlacemarksListViewController: UIViewController {
+  
+  // MARK: - IBOutlets -
+  
+  @IBOutlet weak var tableView: UITableView!
   
   // MARK: - Public properties -
   
   var presenter: PlacemarksListPresenterInterface!
   
+  // MARK: - Private properties -
+  private let refreshControl = UIRefreshControl()
+  
   // MARK: - Lifecycle -
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    _configure()
+    presenter.viewDidLoad()
+  }
+  
+  // MARK: - Private functions -
+  
+  private func _configure() {
+    // Table view and refresh control
+    // Add Refresh Control to Table View
+    if #available(iOS 10.0, *) {
+      tableView.refreshControl = refreshControl
+    } else {
+      tableView.addSubview(refreshControl)
+    }
+    refreshControl.addTarget(self, action: #selector(refreshPlacemarks(_:)), for: .valueChanged)
+    tableView.register(cellType: PlacemarkTableViewCell.self)
+    // tableView.tableFooterView = UIView()
+  }
+  
+  @objc private func refreshPlacemarks(_ sender: Any) {
+    // Fetch Weather Data
+    self.tableView.reloadData()
+    self.refreshControl.endRefreshing()
+    debugPrint("placemarks refreshed with number of placemarks: \(presenter.numberOfPlacemarkItems(in: 0))")
+  }
+}
+
+// MARK: - UITableView Extension -
+
+extension PlacemarksListViewController: UITableViewDataSource, UITableViewDelegate {
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return presenter.numberOfPlacemarkSections()
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return presenter.numberOfPlacemarkItems(in: section)
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let item = presenter.placemarkItem(at: indexPath)
+    
+    let cell: PlacemarkTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+    cell.configure(with: item)
+    
+    return cell
   }
   
 }
 
+
 // MARK: - Extensions -
 
 extension PlacemarksListViewController: PlacemarksListViewInterface {
+  func refreshPlacemarksTable() {
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+    }
+  }
 }
 

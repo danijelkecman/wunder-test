@@ -21,11 +21,17 @@ final class MainViewController: UIViewController {
   
   var presenter: MainPresenterInterface!
   
+  // MARK: - Private properties -
+  
+  private var didSetupViews: Bool = false
+  
   // MARK: - Lifecycle -
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    _configure()
+    if !didSetupViews {
+      _configure()
+    }
     presenter.viewDidLoad()
   }
   
@@ -41,13 +47,10 @@ final class MainViewController: UIViewController {
   
   private func _configure() {
     _setupView()
+    didSetupViews = true
   }
   
-  private func _setupView() {
-    updateView()
-  }
-  
-  // MARK: - Variables -
+  // MARK: - Child Controllers Variables -
   
   private lazy var placemarksListViewController: PlacemarksListViewController = {
     // Load Storyboard
@@ -55,6 +58,9 @@ final class MainViewController: UIViewController {
     
     // Instantiate View Controller
     var viewController = _storyboard.instantiateViewController(ofType: PlacemarksListViewController.self)
+    let interactor = PlacemarksListInteractor()
+    let presenter = PlacemarksListPresenter(wireframe: PlacemarksListWireframe(), view: viewController, interactor: interactor)
+    viewController.presenter = presenter
     
     // Add View Controller as Child View Controller
     self.add(asChildViewController: viewController)
@@ -68,19 +74,32 @@ final class MainViewController: UIViewController {
     
     // Instantiate View Controller
     var viewController = _storyboard.instantiateViewController(ofType: PlacemarksMapViewController.self)
-    
+    let interactor = PlacemarksMapInteractor()
+    let presenter = PlacemarksMapPresenter(wireframe: PlacemarksMapWireframe(), view: viewController, interactor: interactor)
+    viewController.presenter = presenter
     // Add View Controller as Child View Controller
     self.add(asChildViewController: viewController)
     
     return viewController
   }()
+}
+
+// MARK: - Child Controllers Extensions -
+
+extension MainViewController {
+  
+  // MARK: - Setup View -
+  
+  private func _setupView() {
+    updateView()
+  }
   
   // MARK: - Action Methods -
   
-  static func viewController() -> MainViewController {
+  static func mainViewController() -> MainViewController {
     return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(ofType: MainViewController.self)
   }
-
+  
   @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
     updateView()
   }
@@ -123,6 +142,7 @@ final class MainViewController: UIViewController {
       add(asChildViewController: placemarksMapViewController)
     }
   }
+  
 }
 
 // MARK: - Extensions -

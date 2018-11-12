@@ -11,9 +11,15 @@
 import Foundation
 
 final class PlacemarksMapInteractor {
+  private let _placemarksService = PlacemarkDataService(placemarkPersistence: WunderCoreDataStore.shared)
 }
 
 // MARK: - Extensions -
 
 extension PlacemarksMapInteractor: PlacemarksMapInteractorInterface {
+  func getPlacemarks(completion: @escaping ([Placemark]) -> Void) {
+    _placemarksService.fetchPlacemarks { (placemarks) in
+      completion(placemarks)
+    }
+  }
 }

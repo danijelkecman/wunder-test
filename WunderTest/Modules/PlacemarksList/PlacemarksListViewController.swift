@@ -32,6 +32,11 @@ final class PlacemarksListViewController: UIViewController {
     presenter.viewDidLoad()
   }
   
+  deinit {
+    print("Unregistering PlacemarksListViewController")
+    EventBus.unregister(self, name: Constants.EventBus.didLoadPlacemarksEvent)
+  }
+  
   // MARK: - Private functions -
   
   private func _configure() {

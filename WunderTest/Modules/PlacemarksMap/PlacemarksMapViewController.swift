@@ -9,22 +9,121 @@
 //
 
 import UIKit
+import MapKit
 
 final class PlacemarksMapViewController: UIViewController {
+  
+  // MARK: - IBOutlets -
+  @IBOutlet weak var mapView: MKMapView!
+  
+  // MARK: - Public properties -
+  
+  var presenter: PlacemarksMapPresenterInterface!
+  
+  // MARK: - Lifecycle -
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    _configure()
+    presenter.viewDidLoad()
+  }
 
-    // MARK: - Public properties -
-
-    var presenter: PlacemarksMapPresenterInterface!
-
-    // MARK: - Lifecycle -
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  private func _configure() {
+    // MapView
+    mapView.delegate = self
+    mapView.mapType = .standard
+    mapView.isZoomEnabled = true
+    mapView.isScrollEnabled = true
+    
+    if let coordinate = mapView.userLocation.location?.coordinate {
+      mapView.setCenter(coordinate, animated: true)
     }
-	
+    
+    // EventBus
+    EventBus.onMainThread(self, name: Constants.EventBus.didLoadPlacemarksEvent) { result in
+      self.presenter.viewDidLoad()
+    }
+    
+    EventBus.onMainThread(self, name: Constants.EventBus.didChangeAuthorizationStatus) { result in
+      guard let status = result.object as? CLAuthorizationStatus else { return }
+      switch status {
+      case CLAuthorizationStatus.authorizedWhenInUse:
+        WunderLocationManager.shared.startRecording()
+      case CLAuthorizationStatus.authorizedAlways:
+        WunderLocationManager.shared.startRecording()
+      default:
+        return
+      }
+    }
+    
+    EventBus.onMainThread(self, name: Constants.EventBus.didUpdateLocation) { result in
+      guard let locations = (result.object as? [CLLocation]), locations.count > 0 else { return }
+      self.update(with: locations)
+    }
+    
+    
+    // Location Manager
+    WunderLocationManager.shared.requestLocationPermission(background: true)
+  }
+  
+  func update(with locations: [CLLocation]) {
+    guard UIApplication.shared.applicationState == .active else { return }
+    guard let location = locations.last?.coordinate else { return }
+    mapView.mapType = MKMapType.standard
+    
+    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+    let region = MKCoordinateRegion(center: location, span: span)
+    mapView.setRegion(region, animated: true)
+    
+    let annotation = MKPointAnnotation()
+    annotation.coordinate = location
+    annotation.title = "Wunder"
+    annotation.subtitle = "current location"
+    mapView.addAnnotation(annotation)
+  }
+  
+  private func removeAnotations() {
+    let annotations = mapView.annotations
+    let overlays = mapView.overlays
+    mapView.removeAnnotations(annotations)
+    mapView.removeOverlays(overlays)
+  }
+}
+
+// MARK: - MKMapViewDelegate Extension -
+
+extension PlacemarksMapViewController: MKMapViewDelegate {
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    if annotation is MKUserLocation {
+      return nil
+    }
+      
+    else {
+      let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
+      annotationView.image = UIImage(named: "MapPlacemarkLocation")
+      return annotationView
+    }
+  }
+  
+  func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    let renderer = MKCircleRenderer(overlay: overlay)
+    renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+    renderer.strokeColor = UIColor.blue
+    renderer.lineWidth = 2
+    return renderer
+  }
 }
 
 // MARK: - Extensions -
 
 extension PlacemarksMapViewController: PlacemarksMapViewInterface {
+  func addCarLocations() {
+    let carsLocations = presenter.getCarLocations()
+    mapView.addAnnotations(carsLocations)
+    
+    let overlays = carsLocations.map { MKCircle(center: $0.coordinate, radius: 0) }
+    mapView?.addOverlays(overlays)
+    mapView.showAnnotations(self.mapView.annotations, animated: true)
+  }
 }
+

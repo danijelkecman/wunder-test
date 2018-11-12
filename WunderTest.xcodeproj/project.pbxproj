@@ -57,6 +57,12 @@
 		69C10E4221988DD800D09766 /* PlacemarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C10E4021988DD800D09766 /* PlacemarkTableViewCell.xib */; };
 		69C10E462198FF4100D09766 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69C10E452198FF4000D09766 /* GoogleService-Info.plist */; };
 		69C10E4A2199224500D09766 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C10E492199224500D09766 /* EventBus.swift */; };
+		69C10E4C219941D000D09766 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C10E4B219941D000D09766 /* MapKit.framework */; };
+		69C10E522199D3D000D09766 /* MapAnnotationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C10E512199D3D000D09766 /* MapAnnotationType.swift */; };
+		69C10E542199D48F00D09766 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C10E532199D48F00D09766 /* MapAnnotation.swift */; };
+		69C10E562199D57D00D09766 /* MapAnnotation+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C10E552199D57D00D09766 /* MapAnnotation+MapKit.swift */; };
+		69C10E60219A149000D09766 /* CarLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C10E5F219A149000D09766 /* CarLocation.swift */; };
+		69C10E63219A18D200D09766 /* WunderLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C10E62219A18D200D09766 /* WunderLocationManager.swift */; };
 		A210043A29DE3B6278B6181B /* Pods_WunderTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F20B4CD31717E069A25B87C /* Pods_WunderTest.framework */; };
 		D0CF890E545C483EAD1B259D /* Pods_WunderTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6DE63104462459E3520846 /* Pods_WunderTestTests.framework */; };
 /* End PBXBuildFile section */
@@ -138,6 +144,12 @@
 		69C10E4021988DD800D09766 /* PlacemarkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacemarkTableViewCell.xib; sourceTree = "<group>"; };
 		69C10E452198FF4000D09766 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		69C10E492199224500D09766 /* EventBus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
+		69C10E4B219941D000D09766 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		69C10E512199D3D000D09766 /* MapAnnotationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationType.swift; sourceTree = "<group>"; };
+		69C10E532199D48F00D09766 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		69C10E552199D57D00D09766 /* MapAnnotation+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapAnnotation+MapKit.swift"; sourceTree = "<group>"; };
+		69C10E5F219A149000D09766 /* CarLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLocation.swift; sourceTree = "<group>"; };
+		69C10E62219A18D200D09766 /* WunderLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WunderLocationManager.swift; sourceTree = "<group>"; };
 		775383708E45B4ACDEBD3C83 /* Pods-WunderTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WunderTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WunderTestUITests/Pods-WunderTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9238831F8A1F14D7E18D5A07 /* Pods-WunderTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WunderTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WunderTestUITests/Pods-WunderTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0B31B7BAF5CC508673551A /* Pods_WunderTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WunderTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69C10E4C219941D000D09766 /* MapKit.framework in Frameworks */,
 				A210043A29DE3B6278B6181B /* Pods_WunderTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +189,7 @@
 		573CFE2FF03D433B84D41628 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69C10E4B219941D000D09766 /* MapKit.framework */,
 				2F20B4CD31717E069A25B87C /* Pods_WunderTest.framework */,
 				0C6DE63104462459E3520846 /* Pods_WunderTestTests.framework */,
 				CE0B31B7BAF5CC508673551A /* Pods_WunderTestUITests.framework */,
@@ -186,6 +200,7 @@
 		692A608A2191E2CF006F1CFE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				69C10E502199D3BC00D09766 /* WunderMap */,
 				69C10E482199224500D09766 /* EventBus */,
 			);
 			path = Components;
@@ -301,6 +316,7 @@
 		69B100A021908F410096255E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				69C10E61219A18BE00D09766 /* Location */,
 				692A608A2191E2CF006F1CFE /* Components */,
 				69B100DB2190DFC30096255E /* Data */,
 				69B100F72190F2460096255E /* Extensions */,
@@ -445,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				69B100D92190DE730096255E /* Placemark.swift */,
+				69C10E5F219A149000D09766 /* CarLocation.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -532,6 +549,24 @@
 				69C10E492199224500D09766 /* EventBus.swift */,
 			);
 			path = EventBus;
+			sourceTree = "<group>";
+		};
+		69C10E502199D3BC00D09766 /* WunderMap */ = {
+			isa = PBXGroup;
+			children = (
+				69C10E512199D3D000D09766 /* MapAnnotationType.swift */,
+				69C10E532199D48F00D09766 /* MapAnnotation.swift */,
+				69C10E552199D57D00D09766 /* MapAnnotation+MapKit.swift */,
+			);
+			path = WunderMap;
+			sourceTree = "<group>";
+		};
+		69C10E61219A18BE00D09766 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				69C10E62219A18D200D09766 /* WunderLocationManager.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		FCB9920C105F7EFE3ECA9F0C /* Pods */ = {
@@ -622,6 +657,11 @@
 				TargetAttributes = {
 					69B1006B21908EF90096255E = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					69B1007F21908EFA0096255E = {
 						CreatedOnToolsVersion = 10.1;
@@ -873,16 +913,20 @@
 				69B100AE2190AF790096255E /* UIStoryboardExtension.swift in Sources */,
 				69B100D22190BA840096255E /* MainInteractor.swift in Sources */,
 				69B100F92190F2560096255E /* AlamofireExtensions.swift in Sources */,
+				69C10E60219A149000D09766 /* CarLocation.swift in Sources */,
 				692A60982191E489006F1CFE /* PlacemarksMapWireframe.swift in Sources */,
 				69B100C62190B9EB0096255E /* AlamofireInitializer.swift in Sources */,
+				69C10E542199D48F00D09766 /* MapAnnotation.swift in Sources */,
 				69B100E92190E1B90096255E /* ManagedPlacemark.swift in Sources */,
 				692A608921911913006F1CFE /* Constants.swift in Sources */,
 				69B100D12190BA840096255E /* MainViewController.swift in Sources */,
+				69C10E522199D3D000D09766 /* MapAnnotationType.swift in Sources */,
 				69C10E4A2199224500D09766 /* EventBus.swift in Sources */,
 				69B100B02190AF790096255E /* ViewInterface.swift in Sources */,
 				69B100AF2190AF790096255E /* PresenterInterface.swift in Sources */,
 				69B100C22190B9D50096255E /* Initializer.swift in Sources */,
 				69B100CF2190BA840096255E /* MainInterfaces.swift in Sources */,
+				69C10E63219A18D200D09766 /* WunderLocationManager.swift in Sources */,
 				69B100D02190BA840096255E /* MainPresenter.swift in Sources */,
 				692A60952191E489006F1CFE /* PlacemarksMapPresenter.swift in Sources */,
 				69B100E02190E0410096255E /* PlacemarkPersistenceProtocol.swift in Sources */,
@@ -894,6 +938,7 @@
 				69B100C42190B9DF0096255E /* SVProgressHudInitializer.swift in Sources */,
 				69B100DA2190DE730096255E /* Placemark.swift in Sources */,
 				69B100D62190BB5E0096255E /* WunderNavigationController.swift in Sources */,
+				69C10E562199D57D00D09766 /* MapAnnotation+MapKit.swift in Sources */,
 				69C10E3E21988DBA00D09766 /* PlacemarkCellItem.swift in Sources */,
 				69B100E52190E0DB0096255E /* WunderDataModel.xcdatamodeld in Sources */,
 				69C10E4121988DD800D09766 /* PlacemarkTableViewCell.swift in Sources */,

@@ -9,25 +9,65 @@
 //
 
 import UIKit
+import CoreLocation
 
 final class PlacemarksMapPresenter {
-
-    // MARK: - Private properties -
-
-    private unowned var _view: PlacemarksMapViewInterface
-    private var _interactor: PlacemarksMapInteractorInterface
-    private var _wireframe: PlacemarksMapWireframeInterface
-
-    // MARK: - Lifecycle -
-
-    init(wireframe: PlacemarksMapWireframeInterface, view: PlacemarksMapViewInterface, interactor: PlacemarksMapInteractorInterface) {
-        _wireframe = wireframe
-        _view = view
-        _interactor = interactor
+  
+  // MARK: - Private properties -
+  
+  private unowned var _view: PlacemarksMapViewInterface
+  private var _interactor: PlacemarksMapInteractorInterface
+  private var _wireframe: PlacemarksMapWireframeInterface
+  
+  private var _placemarks: [PlacemarkCellItem] = [PlacemarkCellItem]()
+  private var _carLocations: [CarLocation] = [CarLocation]()
+  
+  // MARK: - Lifecycle -
+  
+  init(wireframe: PlacemarksMapWireframeInterface, view: PlacemarksMapViewInterface, interactor: PlacemarksMapInteractorInterface) {
+    _wireframe = wireframe
+    _view = view
+    _interactor = interactor
+  }
+  
+  func viewDidLoad() {
+    guard _placemarks.count == 0 else {
+      return
     }
+    _getPlacemarksFromRepository()
+  }
+  
+  private func _getPlacemarksFromRepository() {
+    _interactor.getPlacemarks { [weak self] (placemarks) in
+      for placemark in placemarks {
+        let _placemark = PlacemarkCellItem(address: placemark.address,
+                                           coordinates: placemark.coordinates,
+                                           engineType: placemark.engineType,
+                                           exterior: placemark.exterior,
+                                           fuel: placemark.fuel,
+                                           interior: placemark.interior,
+                                           name: placemark.name,
+                                           vin: placemark.vin)
+        self?._placemarks.append(_placemark)
+      }
+      self?._view.addCarLocations()
+    }
+  }
 }
 
 // MARK: - Extensions -
 
 extension PlacemarksMapPresenter: PlacemarksMapPresenterInterface {
+  
+  func getCarLocations() -> [CarLocation] {
+    for placemark in _placemarks {
+      let carLocation = CarLocation(title: placemark.name,
+                  subtitle: placemark.address,
+                  coordinate: CLLocationCoordinate2D(latitude: placemark.coordinates[1], longitude: placemark.coordinates[0]))
+      _carLocations.append(carLocation)
+    }
+    return _carLocations
+  }
+  
 }
+

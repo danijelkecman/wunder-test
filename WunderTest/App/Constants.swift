@@ -16,6 +16,9 @@ struct Constants {
   
   struct EventBus {
     static let didLoadPlacemarksEvent: String = "didLoadPlacemarksEvent"
+    static let didChangeAuthorizationStatus: String = "didChangeAuthorizationStatus"
+    static let didFailWithError: String = "didFailWithError"
+    static let didUpdateLocation: String = "didUpdateLocation"
   }
   
 }

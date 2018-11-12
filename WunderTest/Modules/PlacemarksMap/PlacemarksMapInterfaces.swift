@@ -14,14 +14,18 @@ enum PlacemarksMapNavigationOption {
 }
 
 protocol PlacemarksMapWireframeInterface: WireframeInterface {
-    func navigate(to option: PlacemarksMapNavigationOption)
+  func navigate(to option: PlacemarksMapNavigationOption)
 }
 
 protocol PlacemarksMapViewInterface: ViewInterface {
+  func addCarLocations()
 }
 
 protocol PlacemarksMapPresenterInterface: PresenterInterface {
+  func getCarLocations() -> [CarLocation]
 }
 
 protocol PlacemarksMapInteractorInterface: InteractorInterface {
+  func getPlacemarks(completion: @escaping ([Placemark]) -> Void)
 }
+

@@ -29,12 +29,14 @@ final class PlacemarksListPresenter {
   }
   
   func viewDidLoad() {
-    guard _placemarks.count == 0 else { return }
+    guard _placemarks.count == 0 else {
+      _view.refreshPlacemarksTable()
+      return
+    }
     _getPlacemarksFromRepository()
   }
   
   private func _getPlacemarksFromRepository() {
-    _view.showProgressHUD()
     _interactor.getPlacemarks { [weak self] (placemarks) in
       for placemark in placemarks {
         let _placemark = PlacemarkCellItem(address: placemark.address,
@@ -47,7 +49,6 @@ final class PlacemarksListPresenter {
                                            vin: placemark.vin)
         self?._placemarks.append(_placemark)
       }
-      self?._view.hideProgressHUD()
       self?._view.refreshPlacemarksTable()
     }
   }

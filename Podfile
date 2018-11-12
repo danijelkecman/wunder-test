@@ -5,6 +5,10 @@ def app_pods
   pod 'SVProgressHUD', '~> 2.1'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.1'
   pod 'SwiftyBeaver'
+  pod 'Reusable'
+  pod 'Firebase/Core'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end
 
 def testing_pods

@@ -14,4 +14,8 @@ struct Constants {
     static let URLBase = URL(string: "https://s3-us-west-2.amazonaws.com")!
   }
   
+  struct EventBus {
+    static let didLoadPlacemarksEvent: String = "didLoadPlacemarksEvent"
+  }
+  
 }

@@ -65,6 +65,32 @@ extension WunderCoreDataStore: PlacemarkPersistenceProtocol {
     }
   }
   
+  func createPlacemarks(_ placemarks: [Placemark], completionHandler: @escaping (_ done: () throws -> Void) -> Void) {
+    WunderCoreDataStore.shared.backgroundContext.perform {
+      do {
+        for placemark in placemarks {
+          let managedPlacemark = NSEntityDescription.insertNewObject(forEntityName: "ManagedPlacemark",
+                                                                     into: WunderCoreDataStore.shared.backgroundContext) as! ManagedPlacemark
+          
+          managedPlacemark.address = placemark.address
+          managedPlacemark.coordinates = placemark.coordinates
+          managedPlacemark.engineType = placemark.engineType
+          managedPlacemark.exterior = placemark.exterior
+          managedPlacemark.fuel = placemark.fuel
+          managedPlacemark.interior = placemark.interior
+          managedPlacemark.name = placemark.name
+          managedPlacemark.vin = placemark.vin
+        }
+        
+        try WunderCoreDataStore.shared.backgroundContext.save()
+        completionHandler { return }
+      } catch {
+        debugPrint(error)
+        completionHandler { throw WunderStoreError.cannotCreate("Cannot create placemarks") }
+      }
+    }
+  }
+  
   func deletePlacemarks(completionHandler: @escaping (_ done: () throws -> Void) -> Void) {
     WunderCoreDataStore.shared.backgroundContext.perform {
       let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ManagedPlacemark")

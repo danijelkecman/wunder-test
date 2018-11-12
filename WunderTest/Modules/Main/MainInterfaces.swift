@@ -19,6 +19,7 @@ protocol MainWireframeInterface: WireframeInterface {
 }
 
 protocol MainViewInterface: ViewInterface {
+  func didLoadPlacemarks()
 }
 
 protocol MainPresenterInterface: PresenterInterface {

@@ -44,14 +44,18 @@ final class PlacemarksListViewController: UIViewController {
     }
     refreshControl.addTarget(self, action: #selector(refreshPlacemarks(_:)), for: .valueChanged)
     tableView.register(cellType: PlacemarkTableViewCell.self)
-    // tableView.tableFooterView = UIView()
+    tableView.tableFooterView = UIView()
+    
+    // EventBus
+    EventBus.onMainThread(self, name: Constants.EventBus.didLoadPlacemarksEvent) { result in
+      print("didLoadPlacemarksEvent")
+      self.presenter.viewDidLoad()
+    }
   }
   
   @objc private func refreshPlacemarks(_ sender: Any) {
     // Fetch Weather Data
-    self.tableView.reloadData()
-    self.refreshControl.endRefreshing()
-    debugPrint("placemarks refreshed with number of placemarks: \(presenter.numberOfPlacemarkItems(in: 0))")
+    presenter.viewDidLoad()
   }
 }
 
@@ -84,6 +88,7 @@ extension PlacemarksListViewController: UITableViewDataSource, UITableViewDelega
 extension PlacemarksListViewController: PlacemarksListViewInterface {
   func refreshPlacemarksTable() {
     DispatchQueue.main.async {
+      self.refreshControl.endRefreshing()
       self.tableView.reloadData()
     }
   }

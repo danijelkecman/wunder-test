@@ -31,6 +31,7 @@ final class MainViewController: UIViewController {
     super.viewDidLoad()
     if !didSetupViews {
       _configure()
+      didSetupViews = true
     }
     presenter.viewDidLoad()
   }
@@ -47,7 +48,6 @@ final class MainViewController: UIViewController {
   
   private func _configure() {
     _setupView()
-    didSetupViews = true
   }
   
   // MARK: - Child Controllers Variables -
@@ -148,5 +148,8 @@ extension MainViewController {
 // MARK: - Extensions -
 
 extension MainViewController: MainViewInterface {
+  func didLoadPlacemarks() {
+    EventBus.postToMainThread(Constants.EventBus.didLoadPlacemarksEvent)
+  }
 }
 

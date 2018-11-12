@@ -41,10 +41,10 @@ extension MainPresenter: MainPresenterInterface {
     _view.showProgressHUD()
     _dataStore.deletePlacemarks { [weak self] _ in
       self?._interactor.getPlacemarks { (placemarks) in
-        for placemark in placemarks {
-          self?._dataStore.createPlacemark(placemark) { _ in }
+        self?._dataStore.createPlacemarks(placemarks) { _ in
+          self?._view.hideProgressHUD()
+          self?._view.didLoadPlacemarks()
         }
-        self?._view.hideProgressHUD()
       }
     }
   }

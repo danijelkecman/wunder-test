@@ -38,6 +38,18 @@ class PlacemarkDataService {
     
   }
   
+  func createPlacemarks(_ placemarks: [Placemark], completionHandler: @escaping () -> Void) {
+    placemarkPersistence.createPlacemarks(placemarks) { (done: () throws -> Void) -> Void in
+      do {
+        try done()
+        completionHandler()
+      } catch {
+        completionHandler()
+      }
+    }
+    
+  }
+  
   func fetchPlacemarks(_ completionHandler: @escaping (_ placemarks: [Placemark]) -> Void) {
     placemarkPersistence.fetchPlacemarks { (placemarks: () throws -> [Placemark]) -> Void in
       do {

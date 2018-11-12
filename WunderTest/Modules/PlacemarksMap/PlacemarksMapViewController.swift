@@ -58,17 +58,20 @@ final class PlacemarksMapViewController: UIViewController {
     
     EventBus.onMainThread(self, name: Constants.EventBus.didUpdateLocation) { result in
       guard let locations = (result.object as? [CLLocation]), locations.count > 0 else { return }
-      self.update(with: locations)
+      DispatchQueue.main.async {
+        self.update(with: locations)
+      }
     }
     
     
     // Location Manager
-    WunderLocationManager.shared.requestLocationPermission(background: true)
+    WunderLocationManager.shared.requestLocationPermission()
   }
   
   func update(with locations: [CLLocation]) {
     guard UIApplication.shared.applicationState == .active else { return }
     guard let location = locations.last?.coordinate else { return }
+    debugPrint(location)
     mapView.mapType = MKMapType.standard
     
     let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)

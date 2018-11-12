@@ -115,7 +115,6 @@ import CoreLocation
   func requestLocationPermission(background: Bool = false) {
     if background {
       locationManager.requestAlwaysAuthorization()
-      
     } else {
       locationManager.requestWhenInUseAuthorization()
     }
